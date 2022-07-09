@@ -6,28 +6,24 @@ import "./my-custom-class.css";
 function App() {
   return (
     <main>
-      <section>
+      <section className="doc-section">
         <h1>React-Table-NY</h1>
-        <h2>Docs and demo</h2>
+        <h2>Docs/Demo</h2>
       </section>
-      <section>
-        <h3>How to use this package</h3>
-        <h4>How to install</h4>
-        <p>
-          Run <pre>npm install react-table-ny</pre>
-        </p>
-        <h4> Use the Table component </h4>
-        <p>
-          At the top level of your component, import the Table component
-          <pre>{`import \{ Table \} from  "react-table-ny" `}</pre>
-          Then your can use it with your own data
-          <pre>
-            {`<Table data={yourData} title="Your Title" skipFirstKey className="your-classes" />`}
-          </pre>
-        </p>
+      <section className="doc-section">
+        <h3>1. How to use this package</h3>
+        <h4>1.a. How to install</h4>
+        Run <pre>npm install react-table-ny</pre>
+        <h4>1.b. Use the Table component </h4>
+        At the top level of your component, import the Table component:{" "}
+        <pre>{`import \{ Table \} from  "react-table-ny" `}</pre>
+        Then your can use it with your own data:{" "}
+        <pre>
+          {`<Table data={yourData} title="Your Title" skipFirstKey className="your-classes" />`}
+        </pre>
       </section>
-      <section>
-        <h3>Table component props</h3>
+      <section className="doc-section">
+        <h3>2. Table component props</h3>
         <h4>data</h4>
         <p>
           Mandatory. Array of objects with keys and values of type string.
@@ -46,34 +42,41 @@ function App() {
         <h4>className</h4>
         <p>
           Optionnal. String. Add classes that will be applied to the whole
-          table. More on how to customise each part later
+          table. More on how to customise each part later.
         </p>
         <h4>possibleRows</h4>
         <p>
           Optionnal. Array of numbers. Will only use the first four numbers of
           the array. If possibleRows isn't an array or if it has values that are
           not numbers, it will revert to its default value of {"[10,25,50,100]"}
+          .
         </p>
       </section>
-      <section>
-        <h3>Examples</h3>
-        <h4>When data is not an Array</h4>
+      <section className="doc-section">
+        <h3>3. Examples</h3>
+        <p>
+          The table component will return a paragraph with an error message if
+          data is not valid.
+        </p>
+        <h4>3.a. When data is not an Array</h4>
         {
           //@ts-expect-error
           <Table data={1} />
         }
-        <h4>When data is an array but does not have objects</h4>
+        <h4>3.b. When data is an array but does not have objects</h4>
         {
           //@ts-expect-error
           <Table data={[1, 2]} />
         }
-        <h4>When data is an array of objects that don't have the same keys</h4>
+        <h4>
+          3.c. When data is an array of objects that don't have the same keys
+        </h4>
         {<Table data={[{ firstname: "alpha" }, { lastname: "beta" }]} />}
-        <h4>When data is a valid array </h4>
+        <h4>3.d. When data is a valid array </h4>
         {<Table data={EMPLOYEES} />}
-        <h4>With skip firstKey = true </h4>
+        <h4>3.e. With skip firstKey = true </h4>
         {<Table data={EMPLOYEES} skipFirstKey />}
-        <h4> With a title and custom possibleRows {"[1,2,3,5]"} </h4>
+        <h4>3.f. With a title and custom possibleRows {"[1,2,3,5]"} </h4>
         {
           <Table
             data={EMPLOYEES}
@@ -83,37 +86,43 @@ function App() {
           />
         }
       </section>
-      <section>
-        <h3>Features</h3>
-        <h4>Search</h4>
+      <section className="doc-section">
+        <h3>4. Features</h3>
+        <h4>4.a Search</h4>
         <p>
           The search feature will filter your data table with entries where any
-          value matches your search query
+          value matches your search query.
         </p>
-        <h4>Sorting</h4>
+        <h4>4.b Sorting</h4>
         <p>
           React-Table-NY comes with a sorting by key feature. Your first click
           on any title head will sort by ascending order, another click will
           sort by ascending order etc... When clicking on a new key, it will
-          sort by ascending order by default
+          sort by ascending order by default.
         </p>
-        <h4>Styling</h4>
+        <h4>4.c. Styling</h4>
         <p>
           The className prop allows you to add classes to the top level of the
           Table component. Then in your css/sass/less you'll be able to target
-          any element inside the table.
-        </p>
-        <p>
-          Please load the table and inspect developper tools to see the
-          className used. Or you can check the{" "}
+          any element inside the table. <br /> <br /> Load the table in your
+          prefered browser and inspect developper tools to see the class names
+          used or you can check the{" "}
           <a href="https://github.com/Nabil-Y/react-table-ny/blob/master/src/components/Table.css">
             Table.css
           </a>{" "}
-          or{" "}
+          and{" "}
           <a href="https://github.com/Nabil-Y/react-table-ny/blob/master/src/components/Table.tsx">
             Table.tsx
           </a>
+          .
+          <br /> <br />
+          Styles used below can be found{" "}
+          <a href="https://github.com/Nabil-Y/react-table-ny-docs/blob/master/src/my-custom-class.css">
+            here
+          </a>
+          .
         </p>
+
         <Table
           data={EMPLOYEES}
           skipFirstKey
@@ -121,6 +130,14 @@ function App() {
           possibleRows={[2, 3, 4, 5]}
           className="my-custom-class"
         />
+      </section>
+      <section className="doc-section">
+        <h3>Thank you for using React-Table-NY</h3>
+        <p>
+          Please don't hesitate to give me your feedback on{" "}
+          <a href="https://github.com/Nabil-Y">GitHub</a> or{" "}
+          <a href="https://twitter.com/nabil_io">Twitter</a>
+        </p>
       </section>
     </main>
   );

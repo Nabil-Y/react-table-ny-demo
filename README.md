@@ -1,4 +1,5 @@
-# React-Table-Ny Demo and docs
+# React-Table-Ny Docs
 
-Link to React Table Ny main package repo
-Link to docs TEST
+## [Main Package Repo](https://github.com/Nabil-Y/react-table-ny)
+
+## [Docs](react-table-ny-docs.vercel.app)
