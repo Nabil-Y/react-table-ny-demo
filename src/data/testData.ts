@@ -1,24 +1,3 @@
-/**
- * Mock data values for testing/demo purposes
- */
-
-/* c8 ignore next */
-export const wrongData = ["five", "two", "three"];
-export const wrongDataObjects = [
-  {
-    id: "0",
-    firstName: "Jacques",
-  },
-  {
-    id: "1",
-    firstName: "Roberts",
-  },
-  {
-    id: "2",
-    lastName: "Jean-Jacques",
-  },
-  /* c8 ignore next */
-];
 export const EMPLOYEES = [
   {
     id: "0",

@@ -57,7 +57,12 @@ function App() {
         <h3>3. Examples</h3>
         <p>
           The table component will return a paragraph with an error message if
-          data is not valid.
+          data is not valid. <br /> <br />
+          Valid data used for examples can be found{" "}
+          <a href="https://github.com/Nabil-Y/react-table-ny-docs/blob/master/src/data/testData.ts">
+            here
+          </a>
+          .
         </p>
         <h4>3.a. When data is not an Array</h4>
         {
@@ -106,7 +111,14 @@ function App() {
           sort by ascending order etc... When clicking on a new key, it will
           sort by ascending order by default.
         </p>
-        <h4>4.c. Styling</h4>
+        <h4>4.c. Choose rows per page</h4>
+        <p>
+          By default, you can select 10, 25, 50 or 100 rows per page. If you
+          want other values, you can input an array of four numbers (or less) in
+          the possibleRows props. If it's not an array of numbers, it will
+          revert back to the default values.
+        </p>
+        <h4>4.d. Styling</h4>
         <p>
           The className prop allows you to add classes to the top level of the
           Table component. Then in your css/sass/less you'll be able to target
