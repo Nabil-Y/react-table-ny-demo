@@ -17,6 +17,7 @@ function App() {
         <h4>1.b. Use the Table component </h4>
         At the top level of your component, import the Table component:{" "}
         <pre>{`import \{ Table \} from  "react-table-ny" `}</pre>
+        <br /> <br />
         Then your can use it with your own data:{" "}
         <pre>
           {`<Table data={yourData} title="Your Title" skipFirstKey className="your-classes" />`}
@@ -63,19 +64,24 @@ function App() {
           //@ts-expect-error
           <Table data={1} />
         }
+        <hr />
         <h4>3.b. When data is an array but does not have objects</h4>
         {
           //@ts-expect-error
           <Table data={[1, 2]} />
         }
+        <hr />
         <h4>
           3.c. When data is an array of objects that don't have the same keys
         </h4>
         {<Table data={[{ firstname: "alpha" }, { lastname: "beta" }]} />}
+        <hr />
         <h4>3.d. When data is a valid array </h4>
         {<Table data={EMPLOYEES} />}
+        <hr />
         <h4>3.e. With skip firstKey = true </h4>
         {<Table data={EMPLOYEES} skipFirstKey />}
+        <hr />
         <h4>3.f. With a title and custom possibleRows {"[1,2,3,5]"} </h4>
         {
           <Table
