@@ -59,9 +59,15 @@ function App() {
           data is not valid.
         </p>
         <h4>3.a. When data is not an Array</h4>
-        {<Table data={1} />}
+        {
+          //@ts-expect-error
+          <Table data={1} />
+        }
         <h4>3.b. When data is an array but does not have objects</h4>
-        {<Table data={[1, 2]} />}
+        {
+          //@ts-expect-error
+          <Table data={[1, 2]} />
+        }
         <h4>
           3.c. When data is an array of objects that don't have the same keys
         </h4>
